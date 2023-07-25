@@ -1,0 +1,603 @@
+html,body{
+		background-image: url('media/dark-wood.jpg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		font-family: sans-serif;
+		margin: 0;
+		height: 100%;
+		letter-spacing: 1px;
+	}
+
+*{
+  text-decoration: none;
+  list-style: none;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.hide{
+	display: none;
+}
+
+.container{
+	width: 100%;
+	height: auto;
+	padding: 4% 0 4% 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-container{
+	width: 60%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 15px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	box-shadow: 0 0px 16px 0 rgba(0,0,0,0.8);
+	padding: 2% 3%;
+}
+
+.main-container img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.sub-container{
+	width: 70%;
+	height: auto;
+	background-color: white;
+	box-shadow: 0 0px 16px 0 rgba(0,0,0,0.8);
+	border-radius: 10px;
+	padding: 2% 4%;
+	margin-top: 3%;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-container{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.add-button-container{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 5%;
+}
+.add-button{
+	width: 40%;
+	height: 50px;
+	padding: 5px 0px;
+	font-size: 27px;
+	background-color: #3380cc;
+	border-radius: 5px;
+	border: 0;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0 0px 12px 0 rgba(0,0,0,0.2);
+
+}
+.add-button:hover{
+	background-color: #2e73b8;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 20;
+  padding-top: 0.5%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+/* Modal Content */
+.modal-content {
+  z-index: 19;
+  position: relative;
+  background-color: #eff3f5;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation: scale-in-center 0.3s ease-in-out ;
+  border-radius: 5px;
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: 30px;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff3300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close2 {
+  color: white;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  right: 30px;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #ff3300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 15px 16px;
+  background-color: #3380cc;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius:  5px 5px 0 0;
+}
+
+input{
+	width: 80%;
+	font-size: 25px;
+}
+
+#addForm{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3% 0 3% 0;
+}
+#feedbackForm{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3% 0 3% 0;
+}
+#editForm{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3% 0 3% 0;
+}
+#loginForm{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2% 0 3% 0;
+}
+
+.form-button-container{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6%;
+}
+
+.form-button{
+	width: 35%;
+	font-size: 30px;
+	padding: 5px 0px;
+	border: 0;
+	border-radius: 5px;
+	background-color: #29a329;
+	box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+	color: white;
+	cursor: pointer;
+	margin: 0 2%;
+}
+.form-button:hover{
+	box-shadow: 0 0px 18px 0 rgba(0,0,0,0.2);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 0;
+  margin: 2% 1.6%;
+  background-color: #f9f9f9;
+}
+
+.card:hover {
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.2);
+}
+
+.information {
+  padding: 4% 4%;
+  text-align: center;
+  font-size: 27px;
+}
+
+.delete-button{
+	width: 45px;
+	height: 45px;
+	border-radius: 5px;
+	border:0;
+	background-color: #ff3300;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.delete-button span{
+	color: white;
+	font-size: 35px;
+}
+
+.bio-table{
+	width: auto;
+	font-size: 30px;
+	max-width: 80%;
+}
+.bio-table span{
+	font-size: 30px;
+}
+.bio-table td{
+	padding: 5px 10px;
+}
+
+.add-table{
+	font-size: 25px;
+	width: 80%;
+}
+.add-table span{
+	font-size: 25px;
+}
+.add-table td{
+	padding: 5px 10px;
+}
+.add-table input,textarea{
+	width: 95%;
+	padding: 1%;
+	font-size: 25px;
+	border-radius: 5px;
+	border: 1px solid #4d4d4d;
+}
+.add-table textarea{
+	height: 200px;
+}
+.add-table select{
+	width: 97%;
+	font-size: 25px;
+	border-radius: 5px;
+	border: 1px solid #4d4d4d;
+	padding: 1%;
+}
+
+.about{
+	font-size: 30px;
+	font-weight: bold;
+	color: #4d4d4d;
+	margin: 0 10px;
+}
+
+hr{
+	border: 3px solid #999999;
+	width: 35%;
+	border-radius: 3px;
+}
+
+.text-area{
+	width: 80%;
+	text-align: justify;
+	height: auto;
+	font-size: 27px;
+}
+
+.card img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid #4d4d4d;
+}
+
+#open-bio{
+	font-size: 35px;
+}
+#delete-bio{
+	font-size: 35px;
+}
+#open-bio:hover{
+	color: #999999;
+}
+
+.pagination {
+  display: inline-block;
+  font-size: 25px;
+  height: auto;
+  text-align: center;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 10px;
+  float: center;
+  text-align: center;
+}
+
+.pagination a {
+  color: black;
+  float: center;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.page-active {
+  background-color: #00aaff;
+  color: white;
+  border-radius:50%;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;border-radius:50%;}
+
+.feedback-container{
+	width: 94%;
+	height: auto;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	min-height: 100px;
+	padding: 1% 3%;
+	box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2);
+	background-color: #f9f9f9;
+	margin-bottom: 2%;
+}
+
+.feedback-content{
+	width: 100%;
+	border: 1px solid #4d4d4d;
+	border-radius: 5px;
+	text-align: justify;
+	padding: 1% 2%;
+	background-color: white;
+}
+
+.feedback-date{
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	text-align: center;
+	margin: 0 4%;
+}
+
+.feedback-date .date{
+	font-size: 20px;
+}
+
+.feedback-button{
+	width: 8%;
+	text-align: center;
+}
+
+.login-page{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-container{
+	width: 40%;
+	border: 1px solid #4d4d4d;
+	border-radius: 5px;
+	padding: 3% 5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 0px 14px 0 rgba(0,0,0,0.6);
+
+}
+
+.login-header{
+	font-size: 35px;
+	font-weight: bold;
+	margin-bottom: 7%;
+}
+
+.login-info{
+	font-size: 30px;
+	width: 100%;
+}
+.login-info td{
+	padding: 2% 4%;
+}
+
+.login-container input{
+	width: 100%;
+	border-radius: 5px;
+}
+
+.login-container span{
+	font-size: 30px;
+}
+
+.login-container .font{
+	font-size: 30px;
+}
+
+.login-button{
+	width: 60%;
+	font-size: 30px;
+	background-color: #3380cc;
+	border-radius: 5px;
+	color: white;
+	height: 50px;
+	padding: 5px 0px;
+	cursor: pointer;
+	border: 0;
+	margin-top: 4%;
+}
+
+.submit-date{
+	font-size: 17px;
+}
+
+#FeedbackModal{
+	padding-top: 9%;
+}
+
+#admin-main{
+	margin-top: 3%;
+}
+
+#manage-bio{
+	height:35px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+      width:90%;
+    }
+    .bio-table{
+    	font-size: 18px;
+    }
+    .bio-table td{
+    	padding: 0;
+    }
+    .text-area{
+    	font-size: 17px;
+    }
+    .about{
+    	font-size: 20px;
+    }
+    hr{
+    	width: 27%;
+    }
+    .add-button{
+    	font-size: 18px;
+    	width: 45%;
+    }
+    .card{
+    	width: 46%;
+    }
+    .information{
+    	font-size: 20px;
+    }
+    .submit-date{
+    	font-size: 13px;
+    }
+    .modal-content{
+    	width: 95%;
+    }
+    .add-table{
+    	width: 95%;
+    	font-size: 17px;
+    }
+    .add-table td{
+    	padding: 0;
+    }
+    .add-table input,textarea{
+    	font-size: 14px;
+    }
+    .add-table select{
+    	font-size: 14px;
+    }
+    .modal{
+    	padding-top: 14%;
+    }
+    .form-button{
+    	font-size: 20px;
+    }
+    #FeedbackModal{
+    	padding-top: 30%;
+    }
+    .login-container{
+    	width: 85%;
+    	padding: 8% 5%;
+    }
+    .login-header{
+    	font-size: 26px;
+    }
+    .login-info{
+    	font-size: 20px;
+    }
+    .login-info input{
+    	font-size: 20px;
+    }
+    .login-button{
+    	font-size: 25px;
+    	height: 40px;
+    }
+    #admin-main{
+    	margin-top: 17%;
+    }
+    #manage-bio{
+    	padding-top: 10px;
+    	height: 30px;
+    }
+    .feedback-date{
+    	width: 30%;
+    }
+    .feedback-date .date{
+    	font-size: 12px;
+    }
+    #delete-bio{
+    	font-size: 25px;
+    }
+    .feedback-content{
+    	width: 85%;
+    }
+  }
